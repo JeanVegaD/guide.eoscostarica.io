@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Dapp Development · Developer Guidelines</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Building Decentralized Apps"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Dapp Development · Developer Guidelines"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.eoscostarica.io/"/><meta property="og:description" content="## Building Decentralized Apps"/><meta property="og:image" content="https://developers.eoscostarica.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.eoscostarica.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/eoscostarica-transparent-logo.png" alt="Developer Guidelines"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://developers.eoscostarica.io/" target="_self">Home</a></li><li class="siteNavGroupActive"><a href="/docs/open-source-guidelines" target="_self">Developer Guidelines</a></li><li class=""><a href="https://learn.eoscostarica.io/" target="_self">Learning Resources</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Learn EOSIO</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Developer Guidelines</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/engineering-culture">Engineering Culture</a></li><li class="navListItem"><a class="navItem" href="/docs/open-source-guidelines">Open Source Guidelines</a></li><li class="navListItem"><a class="navItem" href="/docs/branding-guidelines">Branding Guidelines</a></li><li class="navListItem"><a class="navItem" href="/docs/web-app-boilerplate">Webapp Boilerplate</a></li><li class="navListItem"><a class="navItem" href="/docs/backend-boilerplate">Backend Boilerplate</a></li><li class="navListItem"><a class="navItem" href="/docs/open-source-projects">Open Source Projects</a></li><li class="navListItem"><a class="navItem" href="/docs/developer-tools">Our Favorite Tools</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Learn EOSIO</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/eos-learn/block-explorers">Block Explorers</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/block-producers">Block Producer</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/eos-learn/dapp-development">Dapp Development</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/devops">DevOps</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eos-blockchain">EOS Blockchain</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eos-podcasts">EOS Podcasts</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eosio-software">EOSIO Software</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/modern-cpp">Modern C++</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/eoscostarica/developers.eoscostarica.io/edit/master/docs/eos-learn/dapp-development.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Dapp Development</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="building-decentralized-apps"></a><a href="#building-decentralized-apps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Building Decentralized Apps</h2>
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/DqbkxfUX5Kg" frameborder="0" allowfullscreen="true">
+  </iframe>
+</figure>
+<p>More on Jackson Kelley's channel <a href="https://www.youtube.com/user/jackodwhacko/videos">https://www.youtube.com/user/jackodwhacko/videos</a></p>
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/EbWDHrm2ETY" frameborder="0" allowfullscreen="true">
+  </iframe>
+</figure>
+<p>More on NSJames's channel <a href="https://www.youtube.com/user/grandmoren1/videos">https://www.youtube.com/user/grandmoren1/videos</a></p>
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/J0SYv-GC3R0" frameborder="0" allowfullscreen="true">
+  </iframe>
+</figure>
+<p>More on Max G's channel <a href="https://www.youtube.com/user/apexmaxable/videos">https://www.youtube.com/user/apexmaxable/videos</a></p>
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/4OmQ7Ow9baI" frameborder="0" allowfullscreen="true">
+  </iframe>
+</figure>
+<h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h2>
+<p><a href="https://developers.eos.io/eosio-cpp/docs/introduction-to-smart-contracts">https://developers.eos.io/eosio-cpp/docs/introduction-to-smart-contracts</a></p>
+<h2><a class="anchor" aria-hidden="true" id="design-framework"></a><a href="#design-framework" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Design Framework</h2>
+<p>A contract is an agreement governing outcomes for actions, given a set of inputs. A contract can range from formal legal contracts (e.g., a financial transaction) to something as simple as the &quot;rules&quot; of a game. Typical actions can be things such as fund transfers (in the case of a financial contract) or game moves (in the case of a game contract).</p>
+<p>An EOSIO smart contract is software registered on the blockchain and executed on EOSIO nodes, that implements the semantics of a &quot;contract&quot; whose ledger of action requests are being stored on the blockchain. The Smart Contract defines the interface (actions, parameters, data structures) and the code that implements the interface. The code is compiled into a canonical bytecode format that nodes can retrieve and execute. The blockchain stores the transactions (e.g., legal transfers, game moves) of the contract. Each Smart Contract must be accompanied by a Ricardian Contract that defines the legally binding terms and conditions of the contract.</p>
+<p>Digital Scarcity's <a href="https://github.com/digital-scarcity/equiprental">github repo</a> has an example designed to provide a step-by-step framework and example for creating a smart contract on EOS. It uses a simple use case of equipment rentals that list their equipment for rent and renters who pay rent for those items.</p>
+<h3><a class="anchor" aria-hidden="true" id="process-steps"></a><a href="#process-steps" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Process Steps</h3>
+<p>Here are the general steps to developing a smart contract.
+<img src="/img/contracts/steps.png" alt="alt text" title="Steps"></p>
+<h3><a class="anchor" aria-hidden="true" id="data-model"></a><a href="#data-model" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data Model</h3>
+<p>Define the data that will be persisted in the smart contract
+<img src="/img/contracts/datamodel.png" alt="alt text" title="Data Model"></p>
+<h3><a class="anchor" aria-hidden="true" id="actions"></a><a href="#actions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Actions</h3>
+<p>Define the actions, or state changes, that must exist in your smart contract
+<img src="/img/contracts/actions.png" alt="alt text" title="Actions"></p>
+<h3><a class="anchor" aria-hidden="true" id="pre-and-post-conditions"></a><a href="#pre-and-post-conditions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pre and Post-Conditions</h3>
+<p>Define the actions or state changes, that must exist in your smart contract
+<img src="/img/contracts/prepostconditions.png" alt="alt text" title="Pre- and Post-Conditions"></p>
+<h2><a class="anchor" aria-hidden="true" id="open-source-smart-contracts"></a><a href="#open-source-smart-contracts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Open Source Smart Contracts</h2>
+<p>EOS Costa Rica maintains a list of open-source EOS smart contracts you can use as reference in the following repo:</p>
+<p><a href="https://github.com/eoscostarica/eos-contracts">https://github.com/eoscostarica/eos-contracts</a></p>
+<h2><a class="anchor" aria-hidden="true" id="jungle-testnet"></a><a href="#jungle-testnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jungle Testnet</h2>
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/s3EM3Hw1S8I" frameborder="0" allowfullscreen="true">
+  </iframe>
+</figure>
+<p>More at <a href="https://jungletestnet.io">https://jungletestnet.io</a></p>
+<h2><a class="anchor" aria-hidden="true" id="kylin-testnet"></a><a href="#kylin-testnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kylin Testnet</h2>
+<p><a href="https://www.cryptokylin.io/">https://www.cryptokylin.io/</a></p>
+<h2><a class="anchor" aria-hidden="true" id="development-environment"></a><a href="#development-environment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Development Environment</h2>
+<p>EOS Local provides a really quick way to set up an EOS local network with IPFS using docker.</p>
+<p><a href="https://github.com/eoscostarica/eos-local">https://github.com/eoscostarica/eos-local</a></p>
+<p>EOSIO.CDT (Contract Development Toolkit) is a suite of tools used to build EOSIO contracts.</p>
+<p><a href="https://github.com/EOSIO/eosio.cdt">https://github.com/EOSIO/eosio.cdt</a></p>
+<p>Python-based EOS smart-contract development &amp; testing framework.</p>
+<p><a href="https://github.com/tokenika/eosfactory">https://github.com/tokenika/eosfactory</a></p>
+<h2><a class="anchor" aria-hidden="true" id="eosio-dapp-boilerplate"></a><a href="#eosio-dapp-boilerplate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EOSIO DApp Boilerplate</h2>
+<p>This boilerplate provides a very quick way to get started with application development on the EOSIO platform. It's an opinioned selection of technologies that will allow you to build performant and scalable EOSIO dApps.</p>
+<p><a href="https://github.com/eoscostarica/eos-dapp-boilerplate">https://github.com/eoscostarica/eos-dapp-boilerplate</a></p>
+<h2><a class="anchor" aria-hidden="true" id="eosio-developers-portal"></a><a href="#eosio-developers-portal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EOSIO Developers Portal</h2>
+<p><a href="https://developers.eos.io/">https://developers.eos.io/</a></p>
+<h2><a class="anchor" aria-hidden="true" id="decentralized-storage---ipfs"></a><a href="#decentralized-storage---ipfs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decentralized Storage - IPFS</h2>
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/5Uj6uR3fp-U" frameborder="0" allowfullscreen="true">
+  </iframe>
+</figure>
+<figure class="video_container">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/HUVmypx9HGI" frameborder="0" allowfullscreen="true">
+  </iframe>
+</figure></span></div></article></div><div class="docLastUpdate"><em>Last updated on 5/15/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/eos-learn/block-producers"><span class="arrow-prev">← </span><span>Block Producer</span></a><a class="docs-next button" href="/docs/eos-learn/devops"><span class="function-name-prevnext">DevOps</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#building-decentralized-apps">Building Decentralized Apps</a></li><li><a href="#getting-started">Getting Started</a></li><li><a href="#design-framework">Design Framework</a><ul class="toc-headings"><li><a href="#process-steps">Process Steps</a></li><li><a href="#data-model">Data Model</a></li><li><a href="#actions">Actions</a></li><li><a href="#pre-and-post-conditions">Pre and Post-Conditions</a></li></ul></li><li><a href="#open-source-smart-contracts">Open Source Smart Contracts</a></li><li><a href="#jungle-testnet">Jungle Testnet</a></li><li><a href="#kylin-testnet">Kylin Testnet</a></li><li><a href="#development-environment">Development Environment</a></li><li><a href="#eosio-dapp-boilerplate">EOSIO DApp Boilerplate</a></li><li><a href="#eosio-developers-portal">EOSIO Developers Portal</a></li><li><a href="#decentralized-storage---ipfs">Decentralized Storage - IPFS</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/eoscostarica-logo.png" alt="Developer Guidelines"/></a><div><h5>EOS Costa Rica</h5><a href="/docs/engineering-culture">Engineering Culture</a><a href="/docs/open-source-projects">Open Source Projects</a><a href="/docs/open-source-guidelines">Contributing Guidelines</a></div><div><h5>Community</h5><a href="https://www.meetup.com/EOS-Costa-Rica/" target="_blank">Meetup</a><a href="https://t.me/eoscr" target="_blank">Telegram Channel</a><a href="https://github.com/eoscostarica/">GitHub</a><a class="github-button" href="https://github.com/eoscostarica" aria-label="Follow @eoscostarica on GitHub">Follow @eoscostarica</a></div><div><h5>More</h5><a href="https://www.linkedin.com/company/11800177/admin/" target="_blank">Linkedin</a><a href="https://medium.com/eoscostarica" target="_blank">Medium</a><a href="https://twitter.com/eoscostarica" target="_blank" rel="noreferrer noopener">Twitter</a><div class="social"><a href="https://twitter.com/eoscostarica" class="twitter-follow-button">Follow @eoscostarica</a></div></div></section><section class="copyright">Copyright © 2020 EOS Costa Rica</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
