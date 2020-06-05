@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>System Resources · Developer Guidelines</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Type of Resources"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="System Resources · Developer Guidelines"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.eoscostarica.io/"/><meta property="og:description" content="## Type of Resources"/><meta property="og:image" content="https://developers.eoscostarica.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.eoscostarica.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/eoscostarica-transparent-logo.png" alt="Developer Guidelines"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://developers.eoscostarica.io/" target="_self">Home</a></li><li class="siteNavGroupActive"><a href="/docs/open-source-guidelines" target="_self">Developer Guidelines</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Learn EOSIO</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Developer Guidelines<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/engineering-culture">Engineering Culture</a></li><li class="navListItem"><a class="navItem" href="/docs/open-source-guidelines">Open Source Guidelines</a></li><li class="navListItem"><a class="navItem" href="/docs/web-app-boilerplate">Webapp Boilerplate</a></li><li class="navListItem"><a class="navItem" href="/docs/backend-boilerplate">Backend Boilerplate</a></li><li class="navListItem"><a class="navItem" href="/docs/open-source-projects">Open Source Projects</a></li><li class="navListItem"><a class="navItem" href="/docs/developer-tools">Our Favorite Tools</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Visual Resources</h4><ul><li class="navListItem"><a class="navItem" href="/docs/visual-resources/material-ui">Material UI &amp; NPM Package</a></li><li class="navListItem"><a class="navItem" href="/docs/visual-resources/eoscr-logos">EOS CR Logos</a></li><li class="navListItem"><a class="navItem" href="/docs/visual-resources/eos-rate-logos">EOS Rate Logos</a></li><li class="navListItem"><a class="navItem" href="/docs/visual-resources/eos-local-logos">EOS Local Logos</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Learn EOSIO<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/eos-learn/block-explorers">Block Explorers</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/block-producers">Block Producer</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/dapp-development">Dapp Development</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/devops">DevOps</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eos-blockchain">EOS Blockchain</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/eos-learn/system-resources">System Resources</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eos-podcasts">EOS Podcasts</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eosio-software">EOSIO Software</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/modern-cpp">Modern C++</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/eoscostarica/developers.eoscostarica.io/edit/master/docs/eos-learn/system-resources.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">System Resources</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="type-of-resources"></a><a href="#type-of-resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type of Resources</h2>
+<p>The accounts will be able to use the following resources in the network:</p>
+<h2><a class="anchor" aria-hidden="true" id="ram"></a><a href="#ram" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RAM</h2>
+<p>In an EOSIO network, RAM is the memory storage space where the blockchain stores data, it is measured in kilobytes (KiB). If your contract needs to store data in a blockchain table, like in a database, then it can store it in the blockchain's RAM.</p>
+<p>RAM is a very important resource and it is a limited one. It is used when executing many actions that are available on the blockchain, when creating a new account for example the information for that account is stored in the blockchain’s memory. Also when an account accepts a new type of token a new record has to be created somewhere in the blockchain memory that holds the balance of the new token accepted, and that memory, the storage space on the blockchain, has to be purchased either by the account that transfers the token or by the account that accepts the new token type.</p>
+<p>RAM is referred to as <code>memory</code> in the following <code>cleos get account</code> output:</p>
+<pre><code class="hljs">memory:
+quota: 86.68 KiB
+used:   11.62 KiB
+</code></pre>
+<p>You can find more details about RAM as a resource <a href="https://developers.eos.io/manuals/eosio.contracts/latest/key-concepts/ram">here</a></p>
+<h2><a class="anchor" aria-hidden="true" id="cpu"></a><a href="#cpu" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CPU</h2>
+<p>CPU is processing power, the amount of CPU an account has is measured in microseconds (μs), it is referred to as <code>CPU bandwidth</code> the <code>cleos get account</code> command outputs the amount of processing time an account has at its disposal when pushing actions to a contract.</p>
+<p>You can find more details about the CPU as a resource <a href="https://developers.eos.io/manuals/eosio.contracts/latest/key-concepts/cpu">here</a></p>
+<h2><a class="anchor" aria-hidden="true" id="network-net"></a><a href="#network-net" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Network (NET)</h2>
+<p>As CPU and RAM, NET is also a very important resource in EOSIO-based blockchains. NET is the network bandwidth measured in bytes of transactions and it is referred to as <code>net bandwidth</code>.</p>
+<p>You can find more details about NET as a resource <a href="https://developers.eos.io/manuals/eosio.contracts/latest/key-concepts/net">here</a></p>
+<h2><a class="anchor" aria-hidden="true" id="account-resource-limits"></a><a href="#account-resource-limits" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Account resource limits</h2>
+<p>Every account on a EOSIO-based blockchain has resource limits for CPU/NET and RAM associated with it. These limits specify how much of each resource can be used by the account and they can be dynamically changed by calling the privileged API <code>set_resource_limits</code>.</p>
+<p>The difference between CPU/NET and RAM resource limits is that RAM, since its a limited resource, once used the only way to recover it is to free the storage space used. On the other side, CPU and NET will be fully replenished when the account is not using the network for a period of time. By default this period is set to 24 hours.</p>
+<h2><a class="anchor" aria-hidden="true" id="resource-billing"></a><a href="#resource-billing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Resource billing</h2>
+<p>When a user (account) wants to interact with a smart-contract (another account) a transaction is created with an action in it that specifies the smart function to call together with the account (permission level) that is authorizing the action.</p>
+<p>Then, after signing with the keys that authorize the permission level specified in the action, the transaction is broadcasted to the network until it reaches the current block-producer in the schedule.</p>
+<p>The block-producer will execute all actions inside the transaction and bill the time used to execute them (CPU) to the first account authorizing the first action. Also, it will bill the first authorizing account for the size of the transaction (NET).</p>
+<p>If the actions performed by the smart-contract involves any kind of data storage, the smart-contract can choose to use the RAM resources of any of the transaction authorizing accounts or use the RAM resources of the smart-contract account.</p>
+<h2><a class="anchor" aria-hidden="true" id="cpu-and-net-as-elastic-resources"></a><a href="#cpu-and-net-as-elastic-resources" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CPU and NET as elastic resources</h2>
+<p>The <code>resource limit manager</code> of an EOSIO-based blockchain is the part of the protocol that keeps track of the amount of available network resources at any time and how much resources each account is using.</p>
+<p>In particular, it treats CPU and NET as elastic resources allowing users to consume more resources than what they are entitled to while this resource is below a desired usage (uncongested).</p>
+<p>An elastic resource has the following properties.</p>
+<ul>
+<li>The desired usage.</li>
+<li>The maximum usage.</li>
+<li>The number of aggregation periods that contribute to the average usage.</li>
+<li>The multiplier by which virtual space can oversell usage when uncongested.</li>
+<li>The rate at which a congested resource contracts its limit.</li>
+<li>The rate at which an uncongested resource expands its limits.</li>
+</ul>
+<p>Let see at the default configuration for the CPU resource as an example:</p>
+<pre><code class="hljs">const static uint32_t default_max_block_cpu_usage = 200'000; /// max block cpu usage in microseconds
+const static uint32_t default_target_block_cpu_usage_pct = 10 * percent_1;
+const static uint32_t block_cpu_usage_average_window_ms = 60*1000l;
+</code></pre>
+<pre><code class="hljs">elastic_limit_parameters cpu_limit_parameters = {
+    EOS_PERCENT(config::default_max_block_cpu_usage, config::default_target_block_cpu_usage_pct),   <span class="hljs-comment">//10% of 200ms</span>
+    config::default_max_block_cpu_usage,<span class="hljs-comment">//200ms</span>
+    config::block_cpu_usage_average_window_ms config::block_interval_ms,                            <span class="hljs-comment">// 60s (120 blocks)</span>
+    <span class="hljs-number">1000</span>,                                                                                           <span class="hljs-comment">//x1000 multiplier </span>
+    {<span class="hljs-number">99</span>, <span class="hljs-number">100</span>},                                                                                      <span class="hljs-comment">//contract ratio 0.99 </span>
+    {<span class="hljs-number">1000</span>, <span class="hljs-number">999</span>}                                                                                     <span class="hljs-comment">//expand ratio 1.001</span>
+    };
+</code></pre>
+<p>By making the CPU an elastic resource, a virtual cpu will be created that will range between the lowest possible value which is the maximun usage specified and the highest possible value which is the the lowest possible value times the multiplier.</p>
+<pre><code class="hljs">virtual cpu = [[maximum usage, maximum usage * multiplier]]
+</code></pre>
+<p>The virtual cpu limit will be contracted (expanded) by the <code>contract (expand) ratio</code> when the average utilization is above (below) the desired usage, meaning that <code>the most an account can consume during idle periods is 1000x (multiplier) the bandwidth it is gauranteed under congestion.</code></p>
+<p>The average CPU utilization is computed using an EMA (Exponential Moving Average) placing a greater weight and significance on the most recent usage.</p>
+<pre><code class="hljs">def update_elastic_limit(current_limit, average_usage, elastic_resource_limit) {
+   <span class="hljs-literal">result</span> = current_limit
+   <span class="hljs-keyword">if</span> average_usage &gt; elastic_resource_limit.target:
+      <span class="hljs-literal">result</span> = <span class="hljs-literal">result</span> * elastic_resource_limit.contract_rate
+   <span class="hljs-keyword">else</span>:
+      <span class="hljs-literal">result</span> = <span class="hljs-literal">result</span> * elastic_resource_limit.expand_rate
+<span class="hljs-built_in">
+   return</span> min(max(<span class="hljs-literal">result</span>, elastic_resource_limit.max), elastic_resource_limit.max * elastic_resource_limit.max_multiplier)
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/5/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/eos-learn/eos-blockchain"><span class="arrow-prev">← </span><span>EOS Blockchain</span></a><a class="docs-next button" href="/docs/eos-learn/eos-podcasts"><span>EOS Podcasts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#type-of-resources">Type of Resources</a></li><li><a href="#ram">RAM</a></li><li><a href="#cpu">CPU</a></li><li><a href="#network-net">Network (NET)</a></li><li><a href="#account-resource-limits">Account resource limits</a></li><li><a href="#resource-billing">Resource billing</a></li><li><a href="#cpu-and-net-as-elastic-resources">CPU and NET as elastic resources</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/eoscostarica-logo.png" alt="Developer Guidelines"/></a><div><h5>EOS Costa Rica</h5><a href="/docs/engineering-culture">Engineering Culture</a><a href="/docs/open-source-projects">Open Source Projects</a><a href="/docs/open-source-guidelines">Contributing Guidelines</a></div><div><h5>Community</h5><a href="https://www.meetup.com/EOS-Costa-Rica/" target="_blank">Meetup</a><a href="https://t.me/eoscr" target="_blank">Telegram Channel</a><a href="https://github.com/eoscostarica/">GitHub</a><a class="github-button" href="https://github.com/eoscostarica" aria-label="Follow @eoscostarica on GitHub">Follow @eoscostarica</a></div><div><h5>More</h5><a href="https://www.linkedin.com/company/11800177/admin/" target="_blank">Linkedin</a><a href="https://medium.com/eoscostarica" target="_blank">Medium</a><a href="https://twitter.com/eoscostarica" target="_blank" rel="noreferrer noopener">Twitter</a><div class="social"><a href="https://twitter.com/eoscostarica" class="twitter-follow-button">Follow @eoscostarica</a></div></div></section><section class="copyright">Copyright © 2020 EOS Costa Rica</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
