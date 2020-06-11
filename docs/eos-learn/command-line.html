@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Command Line Interface · Developer Guidelines</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## CLEOS"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Command Line Interface · Developer Guidelines"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developers.eoscostarica.io/"/><meta property="og:description" content="## CLEOS"/><meta property="og:image" content="https://developers.eoscostarica.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developers.eoscostarica.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/eoscostarica-transparent-logo.png" alt="Developer Guidelines"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://developers.eoscostarica.io/" target="_self">Home</a></li><li class="siteNavGroupActive"><a href="/docs/open-source-guidelines" target="_self">Developer Guidelines</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Learn EOSIO</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Developer Guidelines<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/engineering-culture">Engineering Culture</a></li><li class="navListItem"><a class="navItem" href="/docs/open-source-guidelines">Open Source Guidelines</a></li><li class="navListItem"><a class="navItem" href="/docs/web-app-boilerplate">Webapp Boilerplate</a></li><li class="navListItem"><a class="navItem" href="/docs/backend-boilerplate">Backend Boilerplate</a></li><li class="navListItem"><a class="navItem" href="/docs/open-source-projects">Open Source Projects</a></li><li class="navListItem"><a class="navItem" href="/docs/developer-tools">Our Favorite Tools</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Visual Resources</h4><ul><li class="navListItem"><a class="navItem" href="/docs/visual-resources/material-ui">Material UI &amp; NPM Package</a></li><li class="navListItem"><a class="navItem" href="/docs/visual-resources/eoscr-logos">EOS CR Logos</a></li><li class="navListItem"><a class="navItem" href="/docs/visual-resources/eos-rate-logos">EOS Rate Logos</a></li><li class="navListItem"><a class="navItem" href="/docs/visual-resources/eos-local-logos">EOS Local Logos</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Learn EOSIO<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/eos-learn/consensus-mechanism">Consensus Mechanism</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eosio-protocol">EOSIO Protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/private-keys">Private Keys</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/getting-started">Getting Started</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/eos-learn/command-line">Command Line</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/node-installation">Node Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/accounts-and-permissions">Accounts and Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/important-functions">Important Functions</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/hello-world-contract">Hello World Contract</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eosio-sdk-libraries">EOSIO SDK Libraries</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/block-explorers">Block Explorers</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/block-producers">Block Producer</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/dapp-development">Dapp Development</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/devops">DevOps</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eos-blockchain">EOS Blockchain</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/system-resources">System Resources</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eos-podcasts">EOS Podcasts</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/eosio-software">EOSIO Software</a></li><li class="navListItem"><a class="navItem" href="/docs/eos-learn/modern-cpp">Modern C++</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/eoscostarica/developers.eoscostarica.io/edit/master/docs/eos-learn/command-line.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Command Line Interface</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="cleos"></a><a href="#cleos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLEOS</h2>
+<p><code>cleos</code> is a command line tool that interacts with the API REST exposed by nodeos. The developers also can use code to implement and test EOSIO's Smart Contracts.</p>
+<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p><code>cleos</code> is distributed as part of EOSIO. In order to install <code>cleos</code> follow the instructions written in the EOSIO's software installation section.</p>
+<h2><a class="anchor" aria-hidden="true" id="how-to-use-cleos"></a><a href="#how-to-use-cleos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How to use Cleos</h2>
+<p>In order to use <code>cleos</code>, you need the domain or IP direction (and the port number) of an instance of <code>nodeos</code> in execution. The instance of <code>nodeos</code> needs to be configured to load <code>eosio :: chain_api_plugin</code> when starts. This allows that <code>nodeos</code> responds to the RPC request that come from <code>cleos</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="cleos-command"></a><a href="#cleos-command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cleos command</h3>
+<p>Show the complete command reference in the following link to Cleos Documentation</p>
+<p>To get a full list of the available <code>cleos</code> commands, execute:</p>
+<pre><code class="hljs css language-bash">cleos --<span class="hljs-built_in">help</span>
+</code></pre>
+<pre><code class="hljs">Command Line<span class="hljs-built_in"> Interface </span><span class="hljs-keyword">to</span> EOSIO<span class="hljs-built_in"> Client
+</span>Usage: cleos [OPTIONS] SUBCOMMAND
+
+Options:
+  -h,--help                   <span class="hljs-builtin-name">Print</span> this help message <span class="hljs-keyword">and</span> exit
+  -u,--url <span class="hljs-attribute">TEXT</span>=http://127.0.0.1:8888/
+                              the http/https URL where nodeos is running
+   --wallet-url <span class="hljs-attribute">TEXT</span>=unix:///Users/username/eosio-wallet/keosd.sock
+                              the http/https URL where keosd is running
+  -r,--header                 pass specific HTTP header; repeat this option <span class="hljs-keyword">to</span> pass multiple headers
+  -n,--no-verify              don<span class="hljs-string">'t verify peer certificate when using HTTPS
+  --no-auto-keosd             don'</span>t automatically launch a keosd <span class="hljs-keyword">if</span> one is <span class="hljs-keyword">not</span> currently running
+  -v,--verbose                output verbose errors <span class="hljs-keyword">and</span> action<span class="hljs-built_in"> console </span>output
+  --print-request             <span class="hljs-builtin-name">print</span> HTTP request <span class="hljs-keyword">to</span> STDERR
+  --print-response            <span class="hljs-builtin-name">print</span> HTTP response <span class="hljs-keyword">to</span> STDERR
+
+Subcommands:
+  version                     Retrieve version information
+  create                      Create various items, on <span class="hljs-keyword">and</span> off the blockchain
+  convert                     Pack <span class="hljs-keyword">and</span> unpack transactions
+  <span class="hljs-builtin-name">get</span>                         Retrieve various items <span class="hljs-keyword">and</span> information <span class="hljs-keyword">from</span> the blockchain
+  <span class="hljs-builtin-name">set</span>                         <span class="hljs-builtin-name">Set</span> <span class="hljs-keyword">or</span> update blockchain state
+  transfer                    Transfer tokens <span class="hljs-keyword">from</span> account <span class="hljs-keyword">to</span> account
+  net                         Interact with local p2p<span class="hljs-built_in"> network </span>connections
+  wallet                      Interact with local wallet
+  sign                        Sign a transaction
+  push                        Push arbitrary transactions <span class="hljs-keyword">to</span> the blockchain
+  multisig                    Multisig contract commands
+  wrap                        Wrap contract commands
+ <span class="hljs-built_in"> system </span>                     Send eosio.system contract action <span class="hljs-keyword">to</span> the blockchain.
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="cleos-subcommands"></a><a href="#cleos-subcommands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cleos subcommands</h3>
+<p>To get help whit whatever subcommand in particular, execute <code>code SUBCOMMAND --help</code>. For example:</p>
+<pre><code class="hljs css language-bash">cleos create --<span class="hljs-built_in">help</span>
+</code></pre>
+<pre><code class="hljs"><span class="hljs-keyword">Create</span> various items, <span class="hljs-keyword">on</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">off</span> the blockchain
+<span class="hljs-keyword">Usage</span>: cleos <span class="hljs-keyword">create</span> SUBCOMMAND
+
+Subcommands:
+  <span class="hljs-keyword">key</span>                         <span class="hljs-keyword">Create</span> a <span class="hljs-keyword">new</span> keypair <span class="hljs-keyword">and</span> print the <span class="hljs-keyword">public</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">private</span> <span class="hljs-keyword">keys</span>
+  <span class="hljs-keyword">account</span>                     <span class="hljs-keyword">Create</span> a <span class="hljs-keyword">new</span> <span class="hljs-keyword">account</span> <span class="hljs-keyword">on</span> the blockchain
+                              (assumes <span class="hljs-keyword">system</span> contract does <span class="hljs-keyword">not</span> restrict RAM <span class="hljs-keyword">usage</span>)
+</code></pre>
+<p><code>cleos</code> can also provide help for subcommands use within subcommands. For example:</p>
+<pre><code class="hljs css language-bash">cleos create account --<span class="hljs-built_in">help</span>
+</code></pre>
+<pre><code class="hljs"><span class="hljs-keyword">Create</span> a <span class="hljs-keyword">new</span> <span class="hljs-keyword">account</span> <span class="hljs-keyword">on</span> the blockchain (assumes <span class="hljs-keyword">system</span> contract does <span class="hljs-keyword">not</span> restrict RAM <span class="hljs-keyword">usage</span>)
+<span class="hljs-keyword">Usage</span>: cleos <span class="hljs-keyword">create</span> <span class="hljs-keyword">account</span> [OPTIONS] creator <span class="hljs-keyword">name</span> OwnerKey [ActiveKey]
+
+Positionals:
+  creator <span class="hljs-built_in">TEXT</span>                The <span class="hljs-keyword">name</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">account</span> creating the <span class="hljs-keyword">new</span> <span class="hljs-keyword">account</span> (<span class="hljs-keyword">required</span>)
+  <span class="hljs-keyword">name</span> <span class="hljs-built_in">TEXT</span>                   The <span class="hljs-keyword">name</span> <span class="hljs-keyword">of</span> the <span class="hljs-keyword">new</span> <span class="hljs-keyword">account</span> (<span class="hljs-keyword">required</span>)
+  OwnerKey <span class="hljs-built_in">TEXT</span>               The owner <span class="hljs-keyword">public</span> <span class="hljs-keyword">key</span> <span class="hljs-keyword">or</span> permission <span class="hljs-keyword">level</span> <span class="hljs-keyword">for</span> the <span class="hljs-keyword">new</span> <span class="hljs-keyword">account</span> (<span class="hljs-keyword">required</span>)
+  ActiveKey <span class="hljs-built_in">TEXT</span>              The active <span class="hljs-keyword">public</span> <span class="hljs-keyword">key</span> <span class="hljs-keyword">or</span> permission <span class="hljs-keyword">level</span> <span class="hljs-keyword">for</span> the <span class="hljs-keyword">new</span> <span class="hljs-keyword">account</span>
+
+Options:
+  -h,<span class="hljs-comment">--help                   Print this help message and exit</span>
+  -x,<span class="hljs-comment">--expiration             set the time in seconds before a transaction expires, defaults to 30s</span>
+  -f,<span class="hljs-comment">--force-unique           force the transaction to be unique. this will consume extra bandwidth and remove any protections against accidently issuing the same transaction multiple times</span>
+  -s,<span class="hljs-comment">--skip-sign              Specify if unlocked wallet keys should be used to sign transaction</span>
+  -j,<span class="hljs-comment">--json                   print result as json</span>
+  <span class="hljs-comment">--json-file TEXT            save result in json format into a file</span>
+  -d,<span class="hljs-comment">--dont-broadcast         don't broadcast transaction to the network (just print to stdout)</span>
+  <span class="hljs-comment">--return-packed             used in conjunction with --dont-broadcast to get the packed transaction</span>
+  -r,<span class="hljs-comment">--ref-block TEXT         set the reference block num or block id used for TAPOS (Transaction as Proof-of-Stake)</span>
+  <span class="hljs-comment">--use-old-rpc               use old RPC push_transaction, rather than new RPC send_transaction</span>
+  -p,<span class="hljs-comment">--permission TEXT ...    An account and permission level to authorize, as in 'account@permission' (defaults to 'creator@active')</span>
+  <span class="hljs-comment">--max-cpu-usage-ms UINT     set an upper limit on the milliseconds of cpu usage budget, for the execution of the transaction (defaults to 0 which means no limit)</span>
+  <span class="hljs-comment">--max-net-usage UINT        set an upper limit on the net usage budget, in bytes, for the transaction (defaults to 0 which means no limit)</span>
+  <span class="hljs-comment">--delay-sec UINT            set the delay_sec seconds, defaults to 0s</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="cleos-example"></a><a href="#cleos-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cleos example</h2>
+<p>The following command <code>cleos</code> creates a local wallet called <code>my_wallet</code> and shows the password on the screen:</p>
+<pre><code class="hljs">cleos wallet <span class="hljs-built_in">create</span> -n my_wallet <span class="hljs-comment">--to-console</span>
+</code></pre>
+<pre><code class="hljs">Creating wallet: my_wallet
+Save password to <span class="hljs-keyword">use</span> <span class="hljs-keyword">in</span> the future <span class="hljs-keyword">to</span> <span class="hljs-keyword">unlock</span> this wallet.
+<span class="hljs-keyword">Without</span> <span class="hljs-keyword">password</span> imported <span class="hljs-keyword">keys</span> will <span class="hljs-keyword">not</span> be retrievable.
+<span class="hljs-string">"PW5JbF34UdA193Eps1bjrWVJRaNMt1VKddLn4Dx6SPVTfMDRnMBWN"</span>
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 6/11/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/eos-learn/getting-started"><span class="arrow-prev">← </span><span>Getting Started</span></a><a class="docs-next button" href="/docs/eos-learn/node-installation"><span>Node Installation</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#cleos">CLEOS</a></li><li><a href="#installation">Installation</a></li><li><a href="#how-to-use-cleos">How to use Cleos</a><ul class="toc-headings"><li><a href="#cleos-command">Cleos command</a></li><li><a href="#cleos-subcommands">Cleos subcommands</a></li></ul></li><li><a href="#cleos-example">Cleos example</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/eoscostarica-logo.png" alt="Developer Guidelines"/></a><div><h5>EOS Costa Rica</h5><a href="/docs/engineering-culture">Engineering Culture</a><a href="/docs/open-source-projects">Open Source Projects</a><a href="/docs/open-source-guidelines">Contributing Guidelines</a></div><div><h5>Community</h5><a href="https://www.meetup.com/EOS-Costa-Rica/" target="_blank">Meetup</a><a href="https://t.me/eoscr" target="_blank">Telegram Channel</a><a href="https://github.com/eoscostarica/">GitHub</a><a class="github-button" href="https://github.com/eoscostarica" aria-label="Follow @eoscostarica on GitHub">Follow @eoscostarica</a></div><div><h5>More</h5><a href="https://www.linkedin.com/company/11800177/admin/" target="_blank">Linkedin</a><a href="https://medium.com/eoscostarica" target="_blank">Medium</a><a href="https://twitter.com/eoscostarica" target="_blank" rel="noreferrer noopener">Twitter</a><div class="social"><a href="https://twitter.com/eoscostarica" class="twitter-follow-button">Follow @eoscostarica</a></div></div></section><section class="copyright">Copyright © 2020 EOS Costa Rica</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
