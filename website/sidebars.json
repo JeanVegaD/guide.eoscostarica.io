@@ -40,10 +40,12 @@
       "eos-learn/smart-contracts"
     ],
     "Tools": [
-      "tools/glossary"
+      "tools/glossary",
+      "tools/git-workflow-tutorial"
     ],
     "Community Resources": [
-      "community-resources/telegram-channels"
+      "community-resources/telegram-channels",
+      "community-resources/blog-posts"
     ]
   }
 }

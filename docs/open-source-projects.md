@@ -50,7 +50,6 @@ An EOSIO Infrastructure monitor and node dashboard.
 
 * * *
 
-## EOS Foundation 
 
 <img src="https://raw.githubusercontent.com/eoscostarica/eos-foundation/master/visual-guide/eos-foundation-logo.png" style="width:30%" >
 
