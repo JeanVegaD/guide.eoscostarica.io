@@ -7,7 +7,6 @@ sidebar_label: Open Source Projects
 
 ## EOS Rate 
 
-
 <img src="https://raw.githubusercontent.com/eoscostarica/design-assets/master/logos/eosrate/eosrate--horizontal-solid-transparent-overlight.png" style="width:30%" >
 
 [EOS Rate](https://eosrate.io) is an open-source dApp that allows EOS token holders to rate Block Producers (BPs) in just a few clicks. Users can access a rating system and voting portal, making it easier for token holders to make an informed decision.
@@ -37,7 +36,6 @@ The purpose of LatamLink is to offer an EOSIO-based testnet to highlight the ben
 
 ![Latam Link](../img/OSS_screnshots/Latam_Link_monitor.png)
 
-
 * * *
 
 ## EOSIO network monitor
@@ -50,14 +48,11 @@ An EOSIO Infrastructure monitor and node dashboard.
 
 ![EOSIO network monitor](../img/OSS_screnshots/EOSIO_Network_monitor_2.png)
 
-
 * * *
 
 ## EOS Foundation 
 
-
 <img src="https://raw.githubusercontent.com/eoscostarica/eos-foundation/master/visual-guide/eos-foundation-logo.png" style="width:30%" >
-
 
 We view the EOS Foundation as a container for facilitating code, capital, and connections in ways which haven’t been available so far for the EOS Mainnet community.
 
@@ -97,6 +92,7 @@ Lifebank is an initiative of EOS Costa Rica, a company that develops blockchain-
 
 ![LifeBank](../img/OSS_screnshots/LifeBank.png)
 
+* * *
 
 ## React Components for EOSIO
 
